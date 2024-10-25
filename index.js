@@ -13,13 +13,15 @@ async function fetchAstronauts(requestURL) {
 // CALL your function here
 fetchAstronauts()
 // TASK 1: Fetch Data from the "People in Space" API
-
+return fetchAstronauts
 // 1. Find the "People in Space" API: http://open-notify.org/
 // 2. Identify whether you need to be authenticated with an API Key, if so create an account and save your key. 
 // 3. Navigate the documenation and create a request URL to fetch a list of all the people in outer space.
 // 4. Make a fetch request and format your resulting JSON. 
 // 5. Log the data to the console to inspect its structure.
 // 6. Modify the console log to only show the name of the 8th listed person in outerspace. 
+
+
 
 
 // TASK 2: Fetch Data from the NASA Astronomy Picture of the Day (APOD) API
@@ -30,9 +32,13 @@ fetchAstronauts()
 // 4. Make a fetch request and format your resulting JSON. 
 // 5. Log the data to the console to inspect its structure.
 // 6. Modify the console log to only show the URL of today's astronomy picture. 
+let requestURL2 = "https://api.nasa.gov/planetary/apod?api_key=AuQrlU5mMmYIrtn0cVBMbyzO02AihAIu6isd4NaU"
 
 async function fetchPictures(requestURL) {
-        
+        let picturesInSpace = await fetch(requestURL)
+        const pictures = await picturesInSpace.json()
+        return pictures
 }
 
 // CALL your function here
+return fetchPictures()    
